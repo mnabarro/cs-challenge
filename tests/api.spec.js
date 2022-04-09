@@ -35,7 +35,7 @@ describe('Test suite for Customers API endpoints', () => {
         const response = await request(app).post('/api/customers').send(newCustomer);
         
         expect(response.statusCode).toEqual(201);
-        expect(response.body).toHaveProperty('data.email', 'testuser@domain.com');
+        expect(response.body).toHaveProperty('data.email', newCustomer.email);
         
     });
     
@@ -44,7 +44,7 @@ describe('Test suite for Customers API endpoints', () => {
         const response = await request(app).get('/api/customers/1');
     
         expect(response.statusCode).toEqual(200);
-        expect(response.body).toHaveProperty('data.name','Test');
+        expect(response.body).toHaveProperty('data.name', newCustomer.name);
         //console.log(response.body.data);
         
     });
@@ -68,8 +68,8 @@ describe('Test suite for Customers API endpoints', () => {
         const response = await request(app).put('/api/customers/1').send(modifiedCustomer);
         
         expect(response.statusCode).toEqual(200);
-        expect(response.body).toHaveProperty('data.surName', 'User2');
-        expect(response.body).toHaveProperty('data.email', 'testuser2@otherdomain.com');
+        expect(response.body).toHaveProperty('data.surName', modifiedCustomer.surName);
+        expect(response.body).toHaveProperty('data.email', modifiedCustomer.email);
         
     });
 
