@@ -4,7 +4,7 @@
   "description": "Challenge for Code Sherpas Backend developer position.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "jest"
   },
   "author": "Matias Nabarro",

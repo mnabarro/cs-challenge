@@ -6,7 +6,10 @@ const usersRouter = require('./routes/api/Users');
 const db = require('./models');
 const mocks = require('./mocks.json');
 
-//app.use(morgan('common'));
+//Tell Sequelize wich to use fs db.
+process.env.NODE_ENV='development';
+
+app.use(morgan('common'));
 app.use(express.json());
 
 app.use('/api/customers', usersRouter);
@@ -19,15 +22,13 @@ const initDb = async () => {
 
     await db.sequelize.sync();
 
-    let count = await db.Customers.count();
-    if(count == 0) { await db.Customers.bulkCreate(mocks);}
+    if (process.env.NODE_ENV == 'development') {
+        let count = await db.Customers.count();
+        if(count == 0) { await db.Customers.bulkCreate(mocks);}
+    }
 }
-
-    initDb();
     
-    // app.listen(PORT, () => {
-    //     console.log(`Application listening on port ${PORT}`);
-    // });
+initDb();
 
 module.exports = app;
 

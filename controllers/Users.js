@@ -110,6 +110,9 @@ const usersAPI = {
                         id: id
                     }
                 });
+                //Recover customer with modifications
+                data = await db.Customers.findByPk(id);
+
                 return res.status(200).json({
                     status: '200 OK',
                     data
