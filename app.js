@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const app = express();
-const usersRouter = require('./routes/api/Users');
+const customersRouter = require('./routes/api/Customers');
 const db = require('./models');
 const mocks = require('./mocks.json');
 
@@ -11,7 +11,7 @@ require('dotenv').config();
 app.use(morgan('common'));
 app.use(express.json());
 
-app.use('/api/customers', usersRouter);
+app.use('/api/customers', customersRouter);
 
 app.get('/', (req, res) => {
     res.json({message: "Hi!"});

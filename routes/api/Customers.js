@@ -1,7 +1,7 @@
 const express = require('express');
 const res = require('express/lib/response');
 const router = express.Router();
-const usersController = require('../../controllers/Users');
+const usersController = require('../../controllers/Customers');
 
 router.get('/', usersController.list);
 router.get('/:id', usersController.findByPk);
