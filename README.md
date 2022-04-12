@@ -1,7 +1,11 @@
 # Code Sherpas Backend challenge
 
 ## Comments on the project
-Although it is a simple project, it has allowed me to put into practice what I learned about NodeJs, such as structuring a typical API backend application.
+Although it is a simple project, it has allowed me to put into practice what I learned about NodeJs, such as structuring a typical API backend application, validations, etc...
+
+This project has allowed me to confirm my preference for the backend.I have really enjoyed developing it.
+I will continue to learn related technologies and tools that allow me to improve my performance and grow as a developer.
+
 It has also given me the opportunity to learn about testing, Github actions, and markdown syntax. I hope my solution is up to the requirement.
 
 ## How to run test suite
@@ -144,6 +148,13 @@ Run:
 		"email": "matias@gmail.com",
 		"birthDate": "1977-11-17T00:00:00.000Z"
 	}
+}
+```
+```javascript
+// Example response for PUT to http://localhost:3100/api/customers/44
+{
+	"status": "404 Not Found",
+	"id": "44"
 }
 ```
 
