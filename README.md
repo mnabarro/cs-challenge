@@ -1,6 +1,8 @@
 # Code Sherpas Backend challenge
 
 ## Comments on the project
+Although it is a simple project, it has allowed me to put into practice what I learned about NodeJs, such as structuring a typical API backend application.
+It has also given me the opportunity to learn about testing, Github actions, and markdown syntax. I hope my solution is up to the requirement.
 
 ## How to run test suite
 Open a terminal window. Chdir to the project's folder, run: 
